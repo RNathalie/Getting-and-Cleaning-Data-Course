@@ -8,7 +8,7 @@
 *Content*
 
 
-  I.	*Project description*
+  I.    *Project description*
 
   II.	*Project (raw) dataset description*
 
@@ -19,19 +19,23 @@
 ##I. Project description 
 
 The Project data represent the results of Smartlab – Non Linear Complex Systems Laboratory –experiment, called Human Activity Recognition Using Smartphones. 
-Project data link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+Project data link: 
+`https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip`
+
 ####Project instructions:
+
+
  1. Create R script which performs: 
 
-   Merges the training and the test sets to create one data set;
+         * Merges the training and the test sets to create one data set;
 
-   Extracts only the measurements on the mean and standard deviation for each measurement;
+         * Extracts only the measurements on the mean and standard deviation for each measurement;
 
-   Uses descriptive activity names to name the activities in the data set;
+         * Uses descriptive activity names to name the activities in the data set;
 
-   Appropriately labels the data set with descriptive variable names. 
+         * Appropriately labels the data set with descriptive variable names;
 
-   From the data set in previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+         * From the data set in previous step, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
  2. Present Code books with tidy data variables description
 
@@ -40,29 +44,39 @@ Project data link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%
 
 
 ##II. Project (raw) dataset description
-Data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-The experiment (Human Activity Recognition Using Smartphones) has been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (walking, walking upstairs, walking downstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, was captured 3-axial linear acceleration and 3-axial angular velocity. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
-The features selected for the database come from the accelerometer and gyroscope 3-axial raw signals. These time domain signals  were captured at a constant rate of 50 Hz. The acceleration signal was then separated into body and gravity acceleration signals using another low pass Butterworth filter with a corner frequency of 0.3 Hz. The body linear acceleration and angular velocity were derived in time to obtain Jerk signals. The magnitude of three-dimensional signals was calculated using the Euclidean norm. A Fast Fourier Transform (FFT) was applied to some of these signals producing frequency domain signals. 
-*These signals were used to estimate variables of the feature vector for each pattern:*
-  tBodyAcc-XYZ
-  tGravityAcc-XYZ
-  tBodyAccJerk-XYZ
-  tBodyGyro-XYZ
-  tBodyGyroJerk-XYZ
-  tBodyAccMag
-  tGravityAccMag
-  tBodyAccJerkMag
-  tBodyGyroMag
-  tBodyGyroJerkMag
-  fBodyAcc-XYZ
-  fBodyAccJerk-XYZ
-  fBodyGyro-XYZ
-  fBodyAccMag
-  fBodyAccJerkMag
-  fBodyGyroMag
-  fBodyGyroJerkMag
 
-*The set of variables that were estimated from these signals are: *
+  Data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+  The experiment (Human Activity Recognition Using Smartphones) has been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (walking, walking upstairs, walking downstairs, sitting, standing, laying) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, was captured 3-axial linear acceleration and 3-axial angular velocity. 
+  The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+  The features selected for the database come from the accelerometer and gyroscope 3-axial raw signals. These time domain signals  were captured at a constant rate of 50 Hz. The acceleration signal was then separated into body and gravity acceleration signals using another low pass Butterworth filter with a corner frequency of 0.3 Hz. The body linear acceleration and angular velocity were derived in time to obtain Jerk signals. The magnitude of three-dimensional signals was calculated using the Euclidean norm. A Fast Fourier Transform (FFT) was applied to some of these signals producing frequency domain signals. 
+
+
+*These signals were used to estimate variables of the feature vector for each pattern*
+
+```
+    tBodyAcc-XYZ
+    tGravityAcc-XYZ
+    tBodyAccJerk-XYZ
+    tBodyGyro-XYZ
+    tBodyGyroJerk-XYZ
+    tBodyAccMag
+    tGravityAccMag
+    tBodyAccJerkMag
+    tBodyGyroMag
+    tBodyGyroJerkMag
+    fBodyAcc-XYZ
+    fBodyAccJerk-XYZ
+    fBodyGyro-XYZ
+    fBodyAccMag
+    fBodyAccJerkMag
+    fBodyGyroMag
+    fBodyGyroJerkMag`
+```
+*The set of variables that were estimated from these signals are*
+
+```
   mean(): Mean value
   std(): Standard deviation
   mad(): Median absolute deviation 
@@ -80,7 +94,7 @@ The features selected for the database come from the accelerometer and gyroscope
   kurtosis(): kurtosis of the frequency domain signal 
   bandsEnergy(): Energy of a frequency interval within the 64 bins of   the FFT of each window.
   angle(): Angle between to vectors.
-
+```
 
 
 ##III. Study design
@@ -88,21 +102,22 @@ The features selected for the database come from the accelerometer and gyroscope
 
 ####Creating a tidy dataset
 
-**Input:**
 
-  *The data should be downloaded (link below) and unzipped in R working directory.
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+  *Input:*
 
-  *Script `run_analysis.R`
+1. The data should be downloaded (link below) and unzipped in R working directory.
+`https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip`
 
-  *Performing  the script (run_analysis.R) needs R packages:
+2. Script `run_analysis.R`
+
+3. Performing  the script (run_analysis.R) needs R packages:
 
 ```
 library (dplyr)
 library (data.table)
 ```
 
-**Procedure**
+*Procedure*
 
 #####1.Reading the train and test data into R, merging them
 
@@ -222,7 +237,7 @@ Data_tidy<-arrange(Data_tidy, Subject, Activity)
 write.table(Data_tidy, "Tidy data.txt", row.names=F)
 ```
 
-**Output**
+*Output*
 
 The `Tidy data.txt` file, which represents next variables
 
