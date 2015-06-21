@@ -1,4 +1,4 @@
-| Var                                            | Description                                                                                                                 |
+| Variable                                       | Description                                                                                                                 |
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Subject                                        | One of the thirty persons, who took part in experiment                                                                      |
 | Activity                                       | One of the  six activities (walking, walking_upstairs, walking_downstairs, sitting, standing, laying) each person performed |
