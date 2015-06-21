@@ -1,4 +1,4 @@
-_“Getting and Cleaning Data” Couse Project_
+“Getting and Cleaning Data” Couse Project
 
 
 #CODE BOOK
@@ -6,6 +6,7 @@ _“Getting and Cleaning Data” Couse Project_
 
 
 *Content*
+
 I.	*Project description*
 II.	*Project (raw) dataset description*
 III.	*Study design, tidy data variables description*
